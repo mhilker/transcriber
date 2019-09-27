@@ -1,0 +1,11 @@
+github.com/aws/aws-sdk-go v1.24.6 h1:QmBKT5yfcWuMz6+n53YFl6uiaTCSjhcEk1I5jIRU+uU=
+github.com/aws/aws-sdk-go v1.24.6/go.mod h1:KmX6BPdI08NWTb3/sm4ZGu5ShLoqVDhKgpiN924inxo=
+github.com/jmespath/go-jmespath v0.0.0-20180206201540-c2b33e8439af/go.mod h1:Nht3zPeWKUH0NzdCt2Blrr5ys8VGpn0CEB0cQHVjt7k=
+github.com/mjibson/go-dsp v0.0.0-20180508042940-11479a337f12 h1:dd7vnTDfjtwCETZDrRe+GPYNLA1jBtbZeyfyE8eZCyk=
+github.com/mjibson/go-dsp v0.0.0-20180508042940-11479a337f12/go.mod h1:i/KKcxEWEO8Yyl11DYafRPKOPVYTrhxiTRigjtEEXZU=
+github.com/xlab/pocketsphinx-go v0.0.0-20190320212311-8abf820ce691 h1:07+LrLmjMqYb0FE/iqNAO+xoTKrgJj4P59RCltHSEO0=
+github.com/xlab/pocketsphinx-go v0.0.0-20190320212311-8abf820ce691/go.mod h1:iXOc3luzn8mSqr1X+H3ZrRG57AoOEXmSk+8XDQxh0xU=
+github.com/youpy/go-riff v0.0.0-20131220112943-557d78c11efb h1:RDh7U5Di6o7fblIBe7rVi9KnrcOXUbLwvvLLdP2InSI=
+github.com/youpy/go-riff v0.0.0-20131220112943-557d78c11efb/go.mod h1:83nxdDV4Z9RzrTut9losK7ve4hUnxUR8ASSz4BsKXwQ=
+github.com/youpy/go-wav v0.0.0-20160223082350-b63a9887d320 h1:YuM+QcBOD3fVTF1p5upTKvfAn+CaI1Tsh2s0dxdEzhI=
+github.com/youpy/go-wav v0.0.0-20160223082350-b63a9887d320/go.mod h1:Zf+Ju+8Ofy5zx/YWWArfcGnl5FAsWumLq/uHeRGgL60=

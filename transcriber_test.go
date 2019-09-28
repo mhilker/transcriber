@@ -29,7 +29,7 @@ func TestTranscribe(t *testing.T) {
 	}
 	defer file.Close()
 
-	c := ReadFile(file)
+	c := Read(file)
 	got, _, err := Transcribe(dec, c)
 	if err != nil {
 		t.Error(err)

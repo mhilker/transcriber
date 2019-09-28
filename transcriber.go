@@ -5,7 +5,6 @@ import (
 	"errors"
 	"github.com/xlab/pocketsphinx-go/sphinx"
 	"io"
-	"os"
 )
 
 func Transcribe(dec *sphinx.Decoder, c <-chan []int16) (string, int32, error) {
@@ -22,12 +21,12 @@ func Transcribe(dec *sphinx.Decoder, c <-chan []int16) (string, int32, error) {
 	return hyp, score, nil
 }
 
-func ReadFile(file *os.File) <-chan []int16 {
+func Read(r io.Reader) <-chan []int16 {
 	c := make(chan []int16)
 	go func() {
 		data := make([]int16, 512)
 		for {
-			err := binary.Read(file, binary.LittleEndian, data)
+			err := binary.Read(r, binary.LittleEndian, data)
 			if err == io.EOF {
 				break
 			}

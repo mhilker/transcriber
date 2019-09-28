@@ -6,6 +6,7 @@ RUN apt-get update \
     automake \
     bison \
     build-essential \
+    ffmpeg \
     git \
     libtool \
     swig \

@@ -1,0 +1,12 @@
+---
+version: '3'
+
+services:
+
+  transcriber:
+    image: mhilker/transcriber:latest
+    build:
+      context: ../..
+      dockerfile: cmd/server/Dockerfile
+    ports:
+      - 8080:8080

@@ -22,8 +22,7 @@ func TestTranscribe(t *testing.T) {
 		t.Error(err)
 	}
 
-	file, err := os.Open("audio/test3_en.wav")
-	//file, err := os.Open("audio/test4_2_en.wav")
+	file, err := os.Open("examples/test3_en.wav")
 	if err != nil {
 		t.Error(err)
 	}

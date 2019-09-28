@@ -40,7 +40,9 @@ ENV PATH="/usr/local/go/bin:${PATH}"
 
 WORKDIR /app
 COPY . .
+ENV CGO_ENABLED=1
+ENV GOOS=linux
+RUN go build -a -installsuffix cgo -o server cmd/server/main.go
 
-RUN go get -d -v ./...
-RUN go install -v ./...
-RUN go test
+EXPOSE 8080
+ENTRYPOINT ["./server"]

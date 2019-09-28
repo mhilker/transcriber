@@ -1,6 +1,26 @@
 # Transcriber
 
+Convert audio speech to text.
+
+## Build and run
+
+### On your machine
+
 ```bash
-$ ffmpeg -i x.mp3 -ac 1 -f wav y.wav
-$ LD_LIBRARY_PATH=/usr/local/lib go test
+$ go build -o build/server ./cmd/server/main.go
+$ ./build/server
+```
+
+### Via docker
+
+```bash
+$ docker build -t mhilker/transcriber:latest -f cmd/server/Dockerfile .
+$ docker run -p 8080:8080 mhilker/transcriber:latest
+```
+
+### Via docker-compose
+
+```bash
+$ docker-compose -f cmd/server/docker-compose.yml build
+$ docker-compose -f cmd/server/docker-compose.yml up
 ```

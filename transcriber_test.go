@@ -38,4 +38,3 @@ func TestTranscribe(t *testing.T) {
 		t.Errorf("Transcribe(dec, c) = %q, want %q", got, want)
 	}
 }
-

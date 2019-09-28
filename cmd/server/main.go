@@ -12,8 +12,8 @@ import (
 )
 
 type successResponse struct {
-	Hypothesis string `json:"hypothesis"`
-	Score      float64  `json:"score"`
+	Hypothesis string  `json:"hypothesis"`
+	Score      float64 `json:"score"`
 }
 
 type errorResponse struct {
@@ -29,7 +29,7 @@ func main() {
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		log.Println("handling request")
-		handler(w, r, dec)
+		httpHandler(w, r, dec)
 	})
 
 	log.Println("starting server")
@@ -52,7 +52,7 @@ func newDecoder() (*sphinx.Decoder, error) {
 	return sphinx.NewDecoder(cfg)
 }
 
-func handler(w http.ResponseWriter, r *http.Request, dec *sphinx.Decoder) {
+func httpHandler(w http.ResponseWriter, r *http.Request, dec *sphinx.Decoder) {
 	if r.Method != http.MethodPost {
 		httpError(w, http.StatusMethodNotAllowed, "method not allowed")
 		return
@@ -94,7 +94,7 @@ func handler(w http.ResponseWriter, r *http.Request, dec *sphinx.Decoder) {
 	w.Write(j)
 }
 
-func httpError (w http.ResponseWriter, status int, message string) {
+func httpError(w http.ResponseWriter, status int, message string) {
 	resp := errorResponse{message}
 	j, _ := json.Marshal(resp)
 

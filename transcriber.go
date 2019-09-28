@@ -7,7 +7,10 @@ import (
 	"io"
 )
 
-func Transcribe(dec *sphinx.Decoder, c <-chan []int16) (string, int32, error) {
+func Transcribe(dec *sphinx.Decoder, c <-chan []int16) (string, float64, error) {
+	if !dec.StartStream() {
+		return "", 0, errors.New("sphinx failed to start stream")
+	}
 	if !dec.StartUtt() {
 		return "", 0, errors.New("sphinx failed to start utterance")
 	}
@@ -18,7 +21,7 @@ func Transcribe(dec *sphinx.Decoder, c <-chan []int16) (string, int32, error) {
 		return "", 0, errors.New("sphinx failed to stop utterance")
 	}
 	hyp, score := dec.Hypothesis()
-	return hyp, score, nil
+	return hyp, dec.LogMath().Exp(score), nil
 }
 
 func Read(r io.Reader) <-chan []int16 {

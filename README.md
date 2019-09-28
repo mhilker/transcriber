@@ -2,10 +2,6 @@
 
 Convert audio speech to text.
 
-```
-ffmpeg -i ~/example.webm -acodec pcm_s16le -ar 16000 example.wav
-```
-
 ## Build and run
 
 ### On your machine
